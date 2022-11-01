@@ -1,1 +1,1 @@
-# QAP-10onl
+QAP-10onl project's linter status: [![flake8 Lint](https://github.com/eugene-okulik/QAP-10onl/actions/workflows/lint.yml/badge.svg)](https://github.com/eugene-okulik/QAP-10onl/actions/workflows/lint.yml)  
