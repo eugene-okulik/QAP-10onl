@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in '/dev/null' '/dev/zero' '/dev/sda' '/dev/tty' '/root' '/etc/passwd' '/proc/mounts' '/bin/ls' '/bin/zcat'; do
+for i in $@; do
 case `ls -l $i | cut -b 1` in
         c) echo -e "$i -- Символьное устройство" ;;
         b) echo -e "$i -- Блочное устройство" ;;
