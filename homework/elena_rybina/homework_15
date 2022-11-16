@@ -1,4 +1,4 @@
-Задание №2
+Задание 2
 
 Go to first line in file: g  <  ESC-<
 Go to last line in file: G  >  ESC->
@@ -11,7 +11,7 @@ Repeat previous search: n
 Repeat previous search in reverse direction: N
 
 
-Задание №3
+Задание 3
 
 /dev/null  с (символьное устройство)
 /dev/zero  с (символьное устройство)
