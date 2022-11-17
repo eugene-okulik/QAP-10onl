@@ -1,0 +1,9 @@
+/dev/null - character special file (символьный файл)
+/dev/zero - character special file (символьный файл)
+/dev/sda - No such file or directory
+/dev/tty - character special file (символьный файл)
+/root - directory (каталог)
+/etc/passwd - regular file (обычный файл)
+/proc/mounts - symbolic link (символьная ссылка)
+/bin/ls - regular file (обычный файл)
+/bin/zcat - regular file (обычный файл)
