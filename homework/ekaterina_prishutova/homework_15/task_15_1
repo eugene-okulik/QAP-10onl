@@ -1,0 +1,41 @@
+Задание 2
+
+Go to first line in file:
+    g  <  ESC-<       *  Go to first line in file (or line N).
+
+Go to last line in file:
+    G  >  ESC->       *  Go to last line in file (or line N).
+
+Forward one window:
+    z                 *  Forward  one window (and set window to N).
+
+Forward one line:
+    e  ^E  j  ^N  CR  *  Forward  one line   (or N lines).
+
+Backward one line:
+    y  ^Y  k  ^K  ^P  *  Backward one line   (or N lines).
+
+Search forward for matching line:
+    /pattern          *  Search forward for (N-th) matching line.
+
+Search backward for matching line:
+    ?pattern          *  Search backward for (N-th) matching line.
+
+Repeat previous search:
+    n                 *  Repeat previous search (for N-th occurrence).
+
+Repeat previous search in reverse direction:
+      N                 *  Repeat previous search in reverse direction.
+
+
+Задание 3
+
+/dev/null - character special file (символьное устройство)
+/dev/zero - character special file (символьное устройство)
+/dev/sda - ??
+/dev/tty - character special file (символьное устройство)
+/root - каталог
+/etc/passwd - обычный файл
+/proc/mounts - символьная ссылка
+/bin/ls - обычный файл
+/bin/zcat - обычный файл
