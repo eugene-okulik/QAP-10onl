@@ -1,1 +1,1 @@
-sudo chmod -R g=r-x /home/akurylenka
+sudo chmod -R g=rx-w /home/akurylenka
