@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+echo 'Кліласка ўвядзіце слова:'
+read slova
+
+while [[ $slova != '.' ]]
+
+do
+if [[ ${#slova} -le 5 ]];
+then
+echo 'тут усё ок'
+else
+echo 'слова занадта доўгае'
+fi
+read slova
+done
+
