@@ -6,10 +6,8 @@ class WebPage:
 
     DRIVER = webdriver.Chrome()
 
-    @staticmethod
-    def find_by_id(elem_name: str):
-        return WebPage.DRIVER.find_element(By.ID, elem_name)
+    def find_by_id(self, elem_name: str):
+        return self.DRIVER.find_element(By.ID, elem_name)
 
-    @staticmethod
-    def find_by_class(elem_name: str):
-        return WebPage.DRIVER.find_element(By.CLASS_NAME, elem_name)
+    def find_by_class(self, elem_name: str):
+        return self.DRIVER.find_element(By.CLASS_NAME, elem_name)
