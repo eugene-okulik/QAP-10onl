@@ -67,7 +67,6 @@ def actions(driver):
     print(login_button.tag_name)
 
 
-
 def checkboxes(driver):
     driver.get('https://the-internet.herokuapp.com/checkboxes')
     form = driver.find_element(By.ID, 'checkboxes').is_displayed()
