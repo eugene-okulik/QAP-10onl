@@ -2,6 +2,7 @@ from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 
 def open_browser():
@@ -26,6 +27,14 @@ def find_by_id(driver):
     sign_up_link.click()
 
 
+def find_by_name(driver):
+    driver.get('https://google.com/')
+    search = driver.find_element(By.NAME, 'q')
+    search.send_keys('elephant')
+    # search.submit()
+    search.send_keys(Keys.ENTER)
+
+
 def by_class_name(driver):
     driver.get('https://demoblaze.com/')
     prev_button = driver.find_element(By.CLASS_NAME, 'carousel-control-prev')
@@ -41,6 +50,6 @@ def by_tag_name(driver):
 
 
 common_driver = open_browser()
-by_tag_name(common_driver)
+find_by_name(common_driver)
 sleep(3)
 common_driver.quit()
