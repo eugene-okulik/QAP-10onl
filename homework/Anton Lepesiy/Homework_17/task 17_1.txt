@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+PS3='Ці жадаеце усталяваць Python?'
+echo
+select choice in 'Так' 'Не'
+do
+if [[ $choice == "Так" ]];
+then
+echo "Ваш адказ прыняты, усталёўваем Python"
+else
+echo 'Ваш адказ вельмі важны для нас, але выбар - гэта іллюзія. Усталёўваем Python'
+fi
+break
+done
