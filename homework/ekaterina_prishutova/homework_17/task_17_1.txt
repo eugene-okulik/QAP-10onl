@@ -1,0 +1,13 @@
+#!/bin/bash
+
+PS3='Хотите установить Python?	'
+echo
+select val in 'да' 'нет'
+do
+case $val in
+'да')
+echo Вы выбрали установить python;;
+'нет')
+echo Все равно установим;;
+esac
+done
