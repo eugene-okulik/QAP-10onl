@@ -80,5 +80,3 @@ def student_form(driver):
 chrome_driver = open_browser()
 student_form(chrome_driver)
 chrome_driver.quit()
-
-
