@@ -1,0 +1,15 @@
+#! /bin/bash
+
+echo 'Enter your word'
+read word
+while [[ $word != '.' ]]
+do
+if [[ ${#word} -le 5 ]]
+then
+echo 'OK'
+else
+echo 'The word is too long'
+fi
+echo 'Enter your word'
+read word
+done

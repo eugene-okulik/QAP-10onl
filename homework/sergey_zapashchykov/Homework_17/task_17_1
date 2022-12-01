@@ -1,0 +1,14 @@
+#! /bin/bash
+
+PS3='Do you want to install Python?'
+echo
+select result in 'YES' 'NO'
+do
+if [[ $result == 'YES' ]]
+then
+echo 'You choose to install Python'
+else
+echo 'Install Python in any way'
+fi
+break
+done
