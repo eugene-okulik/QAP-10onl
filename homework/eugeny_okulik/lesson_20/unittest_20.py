@@ -33,14 +33,14 @@ class TestUnittest(unittest.TestCase):
 
     def test_sum(self):
         print('test sum')
-        self.assertEqual(2+2, 5, msg='sum is incorrect')
+        self.assertEqual(2 + 2, 5, msg='sum is incorrect')
 
     @unittest.skip('Bug #234')
     def test_xum(self):
         print('test xum')
-        self.assertEqual(2+2, 6)
+        self.assertEqual(2 + 2, 6)
 
     @unittest.skipIf(datetime.now().year == 2021, 'Not supported in 2022')
     def test_wum(self):
         print('test wum')
-        self.assertTrue(2+2 < 5)
+        self.assertTrue(2 + 2 < 5)
