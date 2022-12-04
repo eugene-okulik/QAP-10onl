@@ -19,9 +19,11 @@ def find_by_id(driver):
 
 def find_by_class_and_get_attribute(driver):
     driver.get('https://demo.seleniumeasy.com/basic-checkbox-demo.html')
+    check_button = driver.find_element(By.ID, 'check1')
+    check_button.click()
     option_1 = driver.find_element(By.CLASS_NAME, 'cb1-element')
     option_1.click()
-    opt_1 = option_1.get_attribute('class')
+    opt_1 = option_1.get_attribute('value')
     print(opt_1)
 
 
