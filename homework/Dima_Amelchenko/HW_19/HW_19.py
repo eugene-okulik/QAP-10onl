@@ -5,7 +5,6 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 
 
-
 def driver():
     options = Options()
     options.add_argument('window-size=400,1000')
