@@ -41,6 +41,7 @@ def form_filler(browser):
     hobbies.click()
     adress_placeholder = browser.find_element(By.ID, 'currentAddress')
     adress_placeholder.send_keys('City, Street-1, House-12, Flat-333')
+    browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     state = browser.find_element(By.ID, 'state')
     state.click()
     state_input = browser.find_element(By.ID, 'react-select-3-input')
