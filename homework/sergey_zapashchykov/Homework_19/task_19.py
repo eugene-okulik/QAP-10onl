@@ -3,12 +3,12 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from time import sleep
+from os.path import join, dirname
 
 
 def open_browser():
     options = Options()
     options.add_argument('start-maximized')
-    # options.add_argument('window-size=1000,1000')
     chrome_driver = webdriver.Chrome(options=options)
     chrome_driver.implicitly_wait(10)
     return chrome_driver
@@ -16,6 +16,7 @@ def open_browser():
 
 def fill_out_the_form(driver):
     driver.get('https://demoqa.com/automation-practice-form')
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     first_name = driver.find_element(By.ID, 'firstName')
     first_name.click()
     first_name.send_keys('Sergey')
@@ -64,7 +65,7 @@ def fill_out_the_form(driver):
     hobby_music.click()
 
     select_picture = driver.find_element(By.ID, 'uploadPicture')
-    select_picture.send_keys('QAP-10onl/homework/sergey_zapashchykov/Homework_19/img/Computer-Science.png')
+    select_picture.send_keys(join(dirname(__file__), 'img', 'Computer-Science.png'))
 
     address = driver.find_element(By.XPATH, '//textarea[@placeholder="Current Address"]')
     address.click()
