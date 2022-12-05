@@ -47,7 +47,8 @@ def filling_the_form(driver_chrome):
 
     driver_chrome.execute_script("window.scrollTo(0,800);")
 
-    hobbies = driver_chrome.find_elements(By.CSS_SELECTOR, '.custom-control.custom-checkbox.custom-control-inline')
+    hobbies = driver_chrome.find_elements(By.CSS_SELECTOR,
+                                          '.custom-control.custom-checkbox.custom-control-inline')
     hobbies[1].click()
 
     current_address = driver_chrome.find_element(By.ID, 'currentAddress')
@@ -75,4 +76,3 @@ def filling_the_form(driver_chrome):
 driver_chrome = driver()
 filling_the_form(driver_chrome)
 driver_chrome.quit()
-
