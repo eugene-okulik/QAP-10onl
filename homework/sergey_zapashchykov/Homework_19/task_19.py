@@ -2,7 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from time import sleep
 from os.path import join, dirname
 
 
@@ -89,5 +88,4 @@ def fill_out_the_form(driver):
 
 common_driver = open_browser()
 fill_out_the_form(common_driver)
-sleep(5)
 common_driver.quit()
