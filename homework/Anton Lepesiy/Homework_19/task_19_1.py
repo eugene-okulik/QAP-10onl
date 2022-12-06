@@ -1,4 +1,3 @@
-from time import sleep
 from selenium import webdriver
 from selenium.webdriver import Keys
 from selenium.webdriver.chrome.options import Options
@@ -11,7 +10,6 @@ def open_browser():
     options.add_argument('start-maximized')
     options.add_experimental_option("detach", True)
     chrome_driver = webdriver.Chrome(options=options)
-    sleep(2)
     return chrome_driver
 
 
@@ -59,5 +57,4 @@ def find_and_fill(driver):
 
 common_driver = open_browser()
 find_and_fill(common_driver)
-sleep(3)
 common_driver.quit()
