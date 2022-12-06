@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from os.path import join, dirname
 
 
 def open_browser():
@@ -49,14 +50,14 @@ def demoqa(driver):
 
     subject_field = driver.find_element(By.XPATH, '//input[@id="subjectsInput"]')
     subject_field.click()
-    subject_field.send_keys("automation practice")
-    subject_field.send_keys(Keys.END)
+    subject_field.send_keys('Chemistry')
+    subject_field.send_keys(Keys.ENTER)
 
     hobby_button = driver.find_element(By.XPATH, '//label[@for="hobbies-checkbox-1"]')
     hobby_button.click()
 
     add_file = driver.find_element(By.XPATH, '//input[@id="uploadPicture"]')
-    add_file.send_keys("C:/aqa_python_part2/QAP-10onl/homework/alesia_kurylenka/homework_19/picture_task_19.png")
+    add_file.send_keys(join(dirname(__file__), 'picture_task_19.png'))
 
     address = driver.find_element(By.ID, 'currentAddress')
     address.send_keys("Testing street, 22")
