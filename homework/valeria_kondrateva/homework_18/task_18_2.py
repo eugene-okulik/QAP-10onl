@@ -23,8 +23,8 @@ def find_by_class_and_get_attribute(driver):
     check_button.click()
     option_1 = driver.find_element(By.CLASS_NAME, 'cb1-element')
     option_1.click()
-    opt_1 = option_1.get_attribute('value')
-    print(opt_1)
+    check_button_text = check_button.get_attribute('value')
+    print(check_button_text)
 
 
 common_driver = open_browser()
