@@ -21,7 +21,7 @@ def submit_form(driver):
     first_name.send_keys('Elena')
     last_name = driver.find_element(By.ID, 'lastName')
     last_name.send_keys('Rybina')
-    email = driver.find_element(By.ID,'userEmail')
+    email = driver.find_element(By.ID, 'userEmail')
     email.send_keys('karkar@gmail.com')
     gender = driver.find_element(By.XPATH, '//*[@id="genterWrapper"]/div[2]/div[2]/label')
     gender.click()
