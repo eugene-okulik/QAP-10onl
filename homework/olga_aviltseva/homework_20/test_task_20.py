@@ -23,7 +23,7 @@ def test_one(all_test, each_test):
 
 @pytest.mark.hard
 def test_two(each_test):
-    assert 2 != 1, '1 is not 2'
+    assert 2 != 1
 
 
 @pytest.mark.simple
