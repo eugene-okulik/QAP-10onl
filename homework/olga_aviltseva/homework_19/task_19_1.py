@@ -56,5 +56,4 @@ def fill_form(driver):
 
 common_driver = open_browser()
 fill_form(common_driver)
-sleep(10)
 common_driver.quit()
