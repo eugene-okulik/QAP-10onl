@@ -22,5 +22,5 @@ def test_one(driver):
     driver.switch_to.window(driver.window_handles[0])
     cart = driver.find_element(By.ID, 'cartur')
     cart.click()
-    cart_with_lumia = driver.find_element(By.XPATH,'//tr[@class="success"]/td[2]')
+    cart_with_lumia = driver.find_element(By.XPATH, '//tr[@class="success"]/td[2]')
     assert cart_with_lumia.text == 'Nokia lumia 1520'
