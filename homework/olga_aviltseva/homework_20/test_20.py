@@ -59,11 +59,11 @@ def test_seven(each_test):
 
 
 def test_eight(each_test):
-    assert 8 is 8
+    assert 8 == 8
 
 
 def test_nine(each_test):
-    assert 4 is not 9
+    assert 4 != 9
 
 
 def test_ten(each_test):
