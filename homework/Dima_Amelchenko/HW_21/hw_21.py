@@ -74,4 +74,3 @@ def test_task3(driver):
     check_text = driver.find_element(By.ID, 'promptreturn').text
 
     assert check_text == text
-
