@@ -1,5 +1,6 @@
 import pytest
 
+
 NAMES = ('Elena', 'Anton', 'Evgeniy')
 
 @pytest.mark.parametrize('name', NAMES)
