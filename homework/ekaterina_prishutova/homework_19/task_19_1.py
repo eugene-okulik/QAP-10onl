@@ -1,4 +1,3 @@
-from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -11,7 +10,6 @@ def open_browser():
     chrome_driver = webdriver.Chrome(options=options)
     chrome_driver.maximize_window()
     chrome_driver.implicitly_wait(10)
-    sleep(3)
     return chrome_driver
 
 
@@ -72,5 +70,4 @@ def fill_fields(driver):
 
 common_driver = open_browser()
 fill_fields(common_driver)
-sleep(3)
 common_driver.quit()
