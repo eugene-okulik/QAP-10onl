@@ -40,7 +40,9 @@ def fill_fields(driver):
     day.click()
 
     field_subjects = driver.find_element(By.XPATH, '//input[@id="subjectsInput"]')
-    field_subjects.send_keys('subjects')
+    field_subjects.send_keys('d')
+    field_subjects_tab = driver.find_element(By.ID, 'react-select-2-option-0')
+    field_subjects_tab.click()
 
     checkbox_hobbies = driver.find_element(By.XPATH, '//label[@for="hobbies-checkbox-2"]')
     checkbox_hobbies.click()
