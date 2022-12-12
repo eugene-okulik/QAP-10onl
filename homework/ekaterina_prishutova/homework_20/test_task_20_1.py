@@ -16,12 +16,12 @@ def fixt_for_func():
     print('\nafter test')
 
 
-def test_one(prepare):
+def test_one(prepare, fixt_for_func):
     print('test_one')
     assert 2 == 2
 
 
-def test_two():
+def test_two(prepare, fixt_for_func):
     print('test_two')
     assert 2 == 2
 
@@ -33,36 +33,36 @@ def test_three(prepare, fixt_for_func):
 
 
 @pytest.mark.simple
-def test_four(fixt_for_func):
+def test_four(prepare, fixt_for_func):
     print('test_four')
     assert 2 == 2
 
 
 @pytest.mark.hard
-def test_five(prepare):
+def test_five(prepare, fixt_for_func):
     print('test_five')
     assert 2 == 2
 
 
-def test_six(fixt_for_func):
+def test_six(prepare, fixt_for_func):
     print('test_six')
     assert 2 == 2
 
 
 @pytest.mark.skip('Slow UI test')
-def test_seven():
+def test_seven(prepare, fixt_for_func):
     print('test_seven')
     assert 2 == 2
 
 
 @pytest.mark.skipif(datetime.now().year == 2022, reason='reason')
 @pytest.mark.simple
-def test_eight(fixt_for_func):
+def test_eight(prepare, fixt_for_func):
     print('test_eight')
     assert 2 == 2
 
 
-def test_nine():
+def test_nine(prepare, fixt_for_func):
     print('test_nine')
     assert 2 == 2
 
@@ -76,7 +76,7 @@ CREDS = [
 
 @pytest.mark.hard
 @pytest.mark.parametrize('creds', CREDS)
-def test_ten(creds):
+def test_ten(prepare, fixt_for_func, creds):
     print('test_ten')
     print(creds[0], '   ', creds[1])
     assert 2 == 2
