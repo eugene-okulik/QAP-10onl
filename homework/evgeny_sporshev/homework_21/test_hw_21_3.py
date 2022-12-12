@@ -12,5 +12,5 @@ def test_three(driver):
     alert = Alert(driver)
     alert.send_keys('blah blah blah')
     alert.accept()
-    prompt_return = driver.find_element(By.XPATH, '//div[@class="centered"][3]/p[1]')
+    prompt_return = driver.find_element(By.ID, 'promptreturn')
     assert prompt_return.text == 'blah blah blah'
