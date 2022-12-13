@@ -8,6 +8,7 @@ class WhatsNewPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         self.page_url = 'https://magento.softwaretestingboard.com/what-is-new.html'
+        self.open()
 
     def open(self):
         self.driver.get(self.page_url)
