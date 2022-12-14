@@ -8,7 +8,7 @@ class BasePage:
         self.driver = driver
 
     def open(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def find(self, locator):
         return self.driver.find_element(*locator)
