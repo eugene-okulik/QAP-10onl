@@ -6,4 +6,3 @@ def test_create_new_account(driver):
     account.open()
     account.filling_out_form()
     assert account.check_my_account() == 'My Account'
-
