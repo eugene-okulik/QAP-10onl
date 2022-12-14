@@ -17,4 +17,3 @@ def test_wish_lists_count(driver):
     eco_friendly_page = EcoFriendlyPage(driver)
     eco_friendly_page.open()
     assert eco_friendly_page.wish_lists_count() == 12
-
