@@ -25,7 +25,7 @@ def test_one(before_after, before_after_all):
 
 @pytest.mark.simple
 def test_two(before_after):
-    assert 'I am' is 'I am'
+    assert 'I am' == 'I am'
 
 
 @pytest.mark.simple
@@ -66,4 +66,4 @@ def test_ten(before_after):
 
 @pytest.mark.parametrize('number', PARAMETERS_DATA)
 def test_nine(before_after, number):
-    assert number is not 3, 'number can\'t be \"3\"'
+    assert number != 3, 'number can\'t be \"3\"'
