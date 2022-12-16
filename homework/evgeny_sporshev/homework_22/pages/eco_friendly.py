@@ -1,6 +1,8 @@
 from pages.base_page import BasePage
 from pages.locators import eco_friendly_locators as locator
-import time
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
 
 
 class EcoFriendly(BasePage):
@@ -16,7 +18,7 @@ class EcoFriendly(BasePage):
 
     def is_search_suggest_shown(self):
         search_suggest = self.find(locator.search_placeholder)
-        search_suggest.send_keys('an')
-        time.sleep(1)  # иначе не получается - саджест не выходит :)
-        search_suggest.send_keys('a')
+        WebDriverWait(self.driver, 10).until(
+            EC.text_to_be_present_in_element(locator.body, 'Default welcome msg!'))
+        search_suggest.send_keys('ana')
         return self.find(locator.search_suggest)
