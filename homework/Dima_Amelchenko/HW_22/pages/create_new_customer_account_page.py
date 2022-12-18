@@ -12,7 +12,7 @@ class CreateNewCustomerAccountPage(BasePage):
     def filling_out_form(self):
         self.find(locator_1.first_name).send_keys('Kazimir')
         self.find(locator_1.last_name).send_keys('Malevich')
-        self.find(locator_1.email).send_keys('malevichkazimir25@gmail.com')
+        self.find(locator_1.email).send_keys('malevichkazimir233@gmail.com')
         self.find(locator_1.password).send_keys('123456789Kazimir+')
         self.find(locator_1.confirm_password).send_keys('123456789Kazimir+')
         self.find(locator_1.create_an_account_button).click()
