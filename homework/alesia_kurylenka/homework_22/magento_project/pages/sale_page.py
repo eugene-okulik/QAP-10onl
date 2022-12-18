@@ -11,11 +11,8 @@ class SalePage(BasePage):
         assert self.find(loc.page_title).text == "Sale"
         return self.driver.current_url == self.page_url
 
-    def is_present_shop_women_deals_button(self):
+    def shop_women_deals_button_text(self):
         return self.find(loc.shop_women_deals).text
 
-    def gear_deals_menu(self):
-        return self.find(loc.gear_deals_menu).text == "GEAR DEALS"
-
-    def gear_deals_menu_text(self):
+    def check_gear_deals_text(self):
         return self.find(loc.gear_deals_menu).text

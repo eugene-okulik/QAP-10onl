@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from pages.locators import create_an_account_page as loc
+from pages.locators import create_account_page as loc
 
 
 class CreateAccountPage(BasePage):
@@ -11,7 +11,7 @@ class CreateAccountPage(BasePage):
         assert self.find(loc.page_title).text == "Create New Customer Account"
         return self.driver.current_url == self.page_url
 
-    def is_present_create_account_button(self):
+    def create_account_button_text(self):
         return self.find(loc.create_account_button).text
 
     def click_create_account_button(self):

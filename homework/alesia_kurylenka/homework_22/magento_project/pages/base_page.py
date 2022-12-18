@@ -23,8 +23,8 @@ class BasePage:
     def scroll_to_bottom(self):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
-    def zoom_out_by_two(self):
-        self.driver.execute_script("document.body.style.zoom = '0.5'")
+    def page_zoom(self, screen_size):
+        self.driver.execute_script(screen_size)
 
     def click(self, locator):
         element = self.driver.find_element(*locator)
