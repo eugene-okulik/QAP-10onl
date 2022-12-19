@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "8a3e6a01-f516-4d31-97b2-085962c075f9",
+		"name": "GoTiny API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24947654"
+	},
+	"item": [
+		{
+			"name": "https://gotiny.cc/api",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": \"https://amazon.com/very-long-url\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://gotiny.cc/api with \"custom\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"long\":\"https://amazon.com/very-long-url\",\r\n   \"custom\":\"custom_amazon\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://gotiny.cc/api with \"custom\" and \"useFallback\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"long\": \"https://amazon.com/very-long-url\",\r\n   \"custom\": \"custom_amazon\",\r\n   \"useFallback\": false\r\n   }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://gotiny.cc/api/whbem2 - Resolve GoTiny link (text)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api/whbem2",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api",
+						"whbem2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://gotiny.cc/api/whbem2 - Resolve GoTiny link(json)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api/whbem2?format=json",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api",
+						"whbem2"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
