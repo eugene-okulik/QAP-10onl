@@ -30,33 +30,33 @@ def test_three(for_all_test, for_current_test):
     assert 'word' == 'word'
 
 
-def test_four(for_all_test):
+def test_four(for_all_test, for_current_test):
     assert 2 + 2 == 4
 
 
-def test_five(for_all_test):
+def test_five(for_all_test, for_current_test):
     assert 'q' == 'q'
 
 
-def test_six(for_all_test):
+def test_six(for_all_test, for_current_test):
     assert 'six' == 'six'
 
 
 @pytest.mark.hard
-def test_seven(for_all_test):
+def test_seven(for_all_test, for_current_test):
     assert '123' == '123'
 
 
 @pytest.mark.slow
-def test_eight(for_all_test):
+def test_eight(for_all_test, for_current_test):
     assert 5 == 5
 
 
 @pytest.mark.parametrize('word', TEST_DATA)
-def test_nine(for_all_test, word):
+def test_nine(for_all_test, for_current_test, word):
     assert word == 'Two'
 
 
 @pytest.mark.skip("Test haven't done yet")
-def test_ten(for_all_test):
+def test_ten(for_all_test, for_current_test):
     assert 'hello' == 'hello'
