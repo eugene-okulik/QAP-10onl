@@ -8,8 +8,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 def test_one(driver):
     driver.get('https://www.demoblaze.com/index.html')
-    lumia = WebDriverWait(driver, 10).until\
-        (EC.presence_of_element_located((By.XPATH, '(//a[@href="prod.html?idp_=2"])[2]')))
+    lumia = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "(//a[@href=\"prod.html?idp_=2\"])[2]")))
     actions = ActionChains(driver)
     actions.key_down(Keys.CONTROL)
     actions.click(lumia)
