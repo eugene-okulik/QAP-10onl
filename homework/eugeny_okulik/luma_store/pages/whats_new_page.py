@@ -34,5 +34,6 @@ class WhatsNewPage(BasePage):
     def check_nothing_to_compare(self):
         return self.find(loc.empty_items_to_compare).text == 'You have no items to compare.'
 
-    def compare_text(self):
+    @property
+    def compare_products_block_text(self):
         return self.find(loc.empty_items_to_compare).text
