@@ -15,4 +15,4 @@ def test_whats_new_link(driver):
     # home_page.whats_new_link.click()
     with allure.step('Check that Wahat\'s new page is opened'):
         whats_new_page = WhatsNewPage(driver)
-        assert whats_new_page.is_page_opened()
+        assert whats_new_page.is_page_opened
