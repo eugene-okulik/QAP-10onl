@@ -19,15 +19,14 @@ def name():
 
 @pytest.fixture(scope='session')
 def authorize(domain, name):
+    headers, endpoint = {'Content-Type': 'application/json'}, '/authorize'
     if exists(join(dirname(__file__), 'current_key.key')):
         with open(join(dirname(__file__), 'current_key.key'), 'r') as f:
             key = f.read()
         response = requests.get(f'{domain}/authorize/{key}')
         if response.status_code == 200:
             if response.text != f'Token is alive. Username is {name}':
-                response = requests.post(f'{domain}/authorize',
-                                         headers={'Content-type': 'application/json'},
-                                         data=json.dumps({'name': f'{name}'}))
+                response = requests.post(f'{domain}{endpoint}', headers=headers,  data=json.dumps({'name': f'{name}'}))
                 if response.status_code == 200:
                     key = response.json()['token']
                     with open(join(dirname(__file__), 'current_key.key'), 'w') as f:
@@ -35,9 +34,7 @@ def authorize(domain, name):
         return key
 
     else:
-        response = requests.post(f'{domain}/authorize',
-                                 headers={'Content-type': 'application/json'},
-                                 data=json.dumps({'name': f'{name}'}))
+        response = requests.post(f'{domain}{endpoint}', headers=headers, data=json.dumps({'name': f'{name}'}))
         if response.status_code == 200:
             key = response.json()['token']
             with open(join(dirname(__file__), 'current_key.key'), 'w') as f:
