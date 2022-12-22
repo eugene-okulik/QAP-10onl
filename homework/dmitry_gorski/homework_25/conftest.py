@@ -23,10 +23,10 @@ def authorize(domain, name):
     if exists(join(dirname(__file__), 'current_key.key')):
         with open(join(dirname(__file__), 'current_key.key'), 'r') as f:
             key = f.read()
-        response = requests.get(f'{domain}/authorize/{key}')
+        response = requests.get(f'{domain}{endpoint}/{key}')
         if response.status_code == 200:
             if response.text != f'Token is alive. Username is {name}':
-                response = requests.post(f'{domain}{endpoint}', headers=headers,  data=json.dumps({'name': f'{name}'}))
+                response = requests.post(f'{domain}{endpoint}', headers=headers, data=json.dumps({'name': name}))
                 if response.status_code == 200:
                     key = response.json()['token']
                     with open(join(dirname(__file__), 'current_key.key'), 'w') as f:
@@ -34,7 +34,7 @@ def authorize(domain, name):
         return key
 
     else:
-        response = requests.post(f'{domain}{endpoint}', headers=headers, data=json.dumps({'name': f'{name}'}))
+        response = requests.post(f'{domain}{endpoint}', headers=headers, data=json.dumps({'name': name}))
         if response.status_code == 200:
             key = response.json()['token']
             with open(join(dirname(__file__), 'current_key.key'), 'w') as f:
