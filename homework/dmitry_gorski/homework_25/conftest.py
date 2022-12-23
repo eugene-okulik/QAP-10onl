@@ -56,4 +56,4 @@ def create_meme(domain, authorize):
     response = requests.post(f'{domain}{endpoint}', headers=headers, data=data).json()
     ID = response['id']
     yield ID
-    requests.request('DELETE', f'{domain}{endpoint}/{ID}')
+    requests.delete(f'{domain}{endpoint}/{ID}')
