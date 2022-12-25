@@ -3,7 +3,7 @@ from pages.locators import locators_eco_friendly_page as locator_2
 from selenium.webdriver.support.ui import Select
 
 
-class EcoFriendly(BasePage):
+class EcoFriendlyPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
