@@ -1,5 +1,5 @@
 from pages.base_page import BasePage
-from pages.locators import locators_reate_new_customer_account as locator_1
+from pages.locators import locators_create_new_customer_account as locator_1
 
 
 class CreateNewCustomerAccountPage(BasePage):
@@ -12,10 +12,16 @@ class CreateNewCustomerAccountPage(BasePage):
     def filling_out_form(self):
         self.find(locator_1.first_name).send_keys('Kazimir')
         self.find(locator_1.last_name).send_keys('Malevich')
-        self.find(locator_1.email).send_keys('malevichkazimir233@gmail.com')
+        self.find(locator_1.email).send_keys('malevichkazimir249@gmail.com')
         self.find(locator_1.password).send_keys('123456789Kazimir+')
         self.find(locator_1.confirm_password).send_keys('123456789Kazimir+')
         self.find(locator_1.create_an_account_button).click()
 
     def check_my_account(self):
         return self.find(locator_1.my_account).text
+
+    def check_compare_products(self):
+        return self.find(locator_1.compare_products).text
+
+    def check_contact_information(self):
+        return self.find(locator_1.contact_information).text
