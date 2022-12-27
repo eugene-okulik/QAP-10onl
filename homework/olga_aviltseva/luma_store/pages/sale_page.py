@@ -11,3 +11,9 @@ class SalePage(BasePage):
 
     def check_nothing_to_wish_list(self):
         return self.find(loc.empty_items_to_wish_list)
+
+    def check_title_page(self):
+        return self.find(loc.page_title).text
+
+    def is_shop_womens_deals_button_present(self):
+        return self.find(loc.shop_womens_deals_button).is_displayed()

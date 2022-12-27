@@ -9,5 +9,14 @@ class EcoFriendlyPage(BasePage):
     def open(self):
         self.driver.get('https://magento.softwaretestingboard.com/collections/eco-friendly.html')
 
-    def check_12_products_on_the_page(self):
+    def count_products_on_the_page(self):
         return len(self.find_all(loc.products_list))
+
+    def click_style_1_filter(self):
+        self.find(loc.style_1_filter).click()
+
+    def check_style_1_content(self):
+        return self.find(loc.style_1_filter_content).is_displayed()
+
+    def click_base_layer_link(self):
+        self.find(loc.base_layer_link).click()
