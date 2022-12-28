@@ -1,6 +1,7 @@
 from pages.account_page import AccountPage
 import allure
 
+
 @allure.feature('Account page')
 @allure.story('Page open')
 def test_is_page_opened(driver):
@@ -8,6 +9,7 @@ def test_is_page_opened(driver):
         account_page = AccountPage(driver)
         account_page.open()
     assert account_page.is_page_opened()
+
 
 @allure.feature('Account page')
 @allure.story('Cart button shown')
