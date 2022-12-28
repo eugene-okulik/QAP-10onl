@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "9857d98e-eb0b-4386-a472-475e2d3d0eb3",
+		"name": "homework_24",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25097601"
+	},
+	"item": [
+		{
+			"name": "task_1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"input\": \"https://amazon.com/very-long-url\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task_2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"long\": \"https://amazon.com/very-long-url\", \"custom\": \"amazon\", \"useFallback\": false }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api?custom=string",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "custom",
+							"value": "string",
+							"description": "custom-link"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task_3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"long\": \"https://amazon.com/very-long-url\", \"custom\": \"amazon\", \"useFallback\": false }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api?custom=string&useFallback=boolean",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "custom",
+							"value": "string",
+							"description": "gotiny.cc/custom-link"
+						},
+						{
+							"key": "useFallback",
+							"value": "boolean",
+							"description": "false"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task_4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gotiny.cc/api/y68hxc",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api",
+						"y68hxc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task_5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gotiny.cc/api?format=json",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
