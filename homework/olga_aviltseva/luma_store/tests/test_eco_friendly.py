@@ -16,7 +16,8 @@ def test_products_count(driver):
 def test_style_1_filter_content(driver):
     eco_friendly = EcoFriendlyPage(driver)
     eco_friendly.open()
-    sleep(3)  # Оставила специально, не забыла убрать
+    sleep(1)  # Не заменен  на WebDriverWait так как на странице ничего не меняется, из за быстрых кликов автотеста
+    # не успевает срабатывать, поэтому стоит слип
     eco_friendly.click_style_1_filter()
     assert eco_friendly.check_style_1_content()
 

@@ -7,7 +7,7 @@ import allure
 def test_sale_page_link(driver):
     sale = SalePage(driver)
     sale.open()
-    assert sale.check_title_page() == 'Sale'
+    assert sale.page_title_text() == 'Sale'
 
 
 @allure.feature('Sale')

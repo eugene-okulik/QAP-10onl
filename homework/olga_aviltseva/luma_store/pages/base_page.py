@@ -25,8 +25,7 @@ class BasePage:
         element.click()
 
     def get_text(self, locator):
-        element = self.driver.find_element(*locator)
-        return element.text
+        return self.driver.find_element(*locator).text
 
     def scroll_page(self):
         self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")

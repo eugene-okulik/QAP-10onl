@@ -17,7 +17,7 @@ def test_check_checkbox_is_selected(driver):
 
 @allure.feature('Create Account')
 @allure.story('Create account form')
-def test_massage_no_password(driver):
+def test_message_no_password(driver):
     with allure.step('Open Create Account page'):
         create_account = CreateAnAccount(driver)
         create_account.open()
@@ -36,8 +36,8 @@ def test_massage_strong_password(driver):
     with allure.step('Enter password'):
         create_account.send_password('Password2022')
     with allure.step('Wait'):
-        sleep(3)  # Оставила специально, не забыла убрать
-    with allure.step('Click create account button'):
-        create_account.click_create_account_button()
-    with allure.step('Check password message'):
+        sleep(1)  # Не заменен  на WebDriverWait так как на странице ничего не меняется, из за быстрых кликов автотеста
+        # не успевает срабатывать, поэтому стоит слип
+        create_account.click_create_account_button()  # Когда пароль отправляется автотестом, то сообщение не
+        # появляется, нужно или с клавиатуры вводить или кликать что-нибудь, поэтому здесь на кнопку
         assert create_account.get_password_message() == 'Very Strong'
