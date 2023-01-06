@@ -13,7 +13,7 @@ def domain():
 
 def authorize(domain):
     my_headers = {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
     }
     my_data = json.dumps(
         {
