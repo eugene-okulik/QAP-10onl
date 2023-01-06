@@ -14,7 +14,7 @@ def domain():
 def authorize(domain):
     my_headers = {
         'Content-Type': 'application/json',
-            }
+    }
     my_data = json.dumps(
         {
            "user": "elena"
@@ -23,6 +23,7 @@ def authorize(domain):
     resp = requests.post(f'{domain}/authorize', headers=my_headers, data=my_data).json()
     token = resp.json()['token']
     return token
+
 
 def check_token(domain, token):
     response = requests.get(f'{domain}/authorize/{token}').text
@@ -54,7 +55,6 @@ def add_meme(domain):
             "url": "https://img.delicious.com.au/WqbvXLhs/del/2016/06/more-the-merrier-31380-2.jpg",
             "tags": ["seafood", "diet"],
             "info": {"type": "jpg"}
-
         }
     )
     meme_id = requests.post(f'{domain}/meme', headers=my_headers, data=my_data).json()['id']
@@ -62,5 +62,5 @@ def add_meme(domain):
     requests.request(
         'DELETE',
         f'{domain}/meme/{meme_id}',
-        headers=my_headers,
+        headers=my_headers
     )
