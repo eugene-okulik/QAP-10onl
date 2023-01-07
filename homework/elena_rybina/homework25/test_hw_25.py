@@ -3,7 +3,7 @@ import requests
 
 
 def test_add_meme(domain, authorization):
-    my_headers = {
+    my_header = {
         'Content-Type': 'application/json',
         'Authorization': f'{authorization}'
     }
@@ -16,12 +16,12 @@ def test_add_meme(domain, authorization):
 
         }
     )
-    response = requests.post(f'{domain}/meme', headers=my_headers, data=my_data).json()
+    response = requests.post(f'{domain}/meme', headers=my_header, data=my_data).json()
     assert response['text'] == "Seafood diet"
 
 
 def test_update_meme(domain, authorization, add_meme):
-    my_headers = {
+    my_header = {
         'Content-Type': 'application/json',
         'Authorization': f'{authorization}'
     }
@@ -34,27 +34,27 @@ def test_update_meme(domain, authorization, add_meme):
             "info": {"type": "jpg"}
         }
     )
-    response = requests.put(f'{domain}/meme/{add_meme}', headers=my_headers, data=my_data).json()
+    response = requests.put(f'{domain}/meme/{add_meme}', headers=my_header, data=my_data).json()
     assert response['text'] == 'Seafood diet meme'
 
 
 def test_delete_meme(domain, authorization, add_meme):
-    my_headers = {
+    my_header = {
         'Content-Type': 'application/json',
         'Authorization': f'{authorization}'
     }
     meme_id = add_meme
-    requests.delete(f'{domain}/meme/{meme_id}', headers=my_headers)
-    response = requests.get(f'{domain}/meme/{meme_id}', headers=my_headers)
+    requests.delete(f'{domain}/meme/{meme_id}', headers=my_header)
+    response = requests.get(f'{domain}/meme/{meme_id}', headers=my_header)
     assert response.status_code == 404
 
 
 def test_get_meme(domain, authorization):
-    my_headers = {
+    my_header = {
         'Content-Type': 'application/json',
         'Authorization': f'{authorization}'
     }
-    response = requests.get(f'{domain}/meme', headers=my_headers).json()['data']
+    response = requests.get(f'{domain}/meme', headers=my_header).json()['data']
     test_result = False
     for mem in response:
         for tag in mem["tags"]:
