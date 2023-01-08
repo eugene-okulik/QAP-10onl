@@ -1,5 +1,7 @@
 from pages.create_account_page import CreateAnAccount
-from time import sleep
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.common.by import By
 import allure
 
 
@@ -34,10 +36,6 @@ def test_massage_strong_password(driver):
     with allure.step('Scroll page'):
         create_account.scroll_page()
     with allure.step('Enter password'):
+        WebDriverWait(driver, 10).until(ec.text_to_be_present_in_element((By.TAG_NAME, 'body'), 'Default welcome msg!'))
         create_account.send_password('Password2022')
-    with allure.step('Wait'):
-        sleep(1)  # Не заменен  на WebDriverWait так как на странице ничего не меняется, из за быстрых кликов автотеста
-        # не успевает срабатывать, поэтому стоит слип
-        create_account.click_create_account_button()  # Когда пароль отправляется автотестом, то сообщение не
-        # появляется, нужно или с клавиатуры вводить или кликать что-нибудь, поэтому здесь на кнопку
         assert create_account.get_password_message() == 'Very Strong'
