@@ -1,0 +1,156 @@
+{
+	"info": {
+		"_postman_id": "30ee16f5-9e0c-4f0e-aa33-6000d755cae6",
+		"name": "Anton_Lepesiy_Homework_24",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24947656"
+	},
+	"item": [
+		{
+			"name": "Test_Task_1_Create_GoTiny_link",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": \"https://open.spotify.com/track/4CgYW8EtiMzu284GJCVlBf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test_Task_2_Custom_option",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": \"https://open.spotify.com/track/4CgYW8EtiMzu284GJCVlBf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api?custom=spoti",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "custom",
+							"value": "spoti"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test_Task_3_Custom_&_useFallback",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"input\": \"https://open.spotify.com/track/4CgYW8EtiMzu284GJCVlBf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://gotiny.cc/api?custom=spoti&useFallback=True",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api"
+					],
+					"query": [
+						{
+							"key": "custom",
+							"value": "spoti"
+						},
+						{
+							"key": "useFallback",
+							"value": "True"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test_Task_4_get_link",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gotiny.cc/api/<mywwnx>",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api",
+						"<mywwnx>"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " Test_Task_4_get_link_in_json_format",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://gotiny.cc/api/mywwnx?format=json",
+					"protocol": "https",
+					"host": [
+						"gotiny",
+						"cc"
+					],
+					"path": [
+						"api",
+						"mywwnx"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
