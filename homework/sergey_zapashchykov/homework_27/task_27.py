@@ -22,7 +22,7 @@ query_create_book = 'INSERT INTO books  VALUES (%s, %s, %s)'
 book_value = [
     (10, 'Learning Python (part 1)', 16),
     (11, 'Learning Python (part 2)', 16)
-    ]
+]
 cursor.executemany(query_create_book, book_value)
 
 db.commit()
@@ -30,10 +30,10 @@ db.commit()
 query_result = '''
 SELECT s.name as first_name, s.second_name as second_name, g.title as group_title, b.title as book_title
 FROM students s
-JOIN books b 
-JOIN `groups` g 
-ON s.id = b.taken_by_student_id 
-AND s.group_id  = g.id 
+JOIN books b
+JOIN `groups` g
+ON s.id = b.taken_by_student_id
+AND s.group_id  = g.id
 WHERE s.group_id = 4
 '''
 cursor.execute(query_result)
