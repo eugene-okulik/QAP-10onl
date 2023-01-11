@@ -24,14 +24,14 @@ create_books = 'INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)'
 books_values = [
     ('harry potter', student_id),
     ('gone with the wind', student_id)
-    ]
+                ]
 cursor.executemany(create_books, books_values)
 
 db.commit()
 
 student = '''SELECT s.name, s.second_name, b.title as book_title, g.title as group_title
-FROM students s 
-JOIN books b 
+FROM students s
+JOIN books b
 JOIN `groups` g
 ON s.group_id = g.id
 WHERE s.group_id = 245'''
