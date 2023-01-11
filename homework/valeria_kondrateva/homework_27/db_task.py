@@ -24,7 +24,7 @@ create_books = 'INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)'
 books_values = [
     ('harry potter', student_id),
     ('gone with the wind', student_id)
-                ]
+]
 cursor.executemany(create_books, books_values)
 
 db.commit()
