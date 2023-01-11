@@ -2,15 +2,10 @@ import requests
 import json
 
 
-def test_token_validity(domain, token):
-    response = requests.request('GET', f'{domain}/authorize/{token}')
-    assert response.status_code == 200
-
-
-def test_add_new_meme(domain, token):
+def test_add_new_meme(domain, authorize):
     headers = {
         'Content-Type': 'application/json',
-        'Authorization': f'{token}'
+        'Authorization': f'{authorize}'
     }
     data = json.dumps(
         {
@@ -32,14 +27,14 @@ def test_add_new_meme(domain, token):
     assert response['updated_by'] == "Dima_Amelchenko"
 
 
-def test_modification_meme(domain, token):
+def test_modification_meme(domain, token, add_meme):
     headers = {
         'Content-Type': 'application/json',
         'Authorization': f'{token}'
     }
     data = json.dumps(
         {
-            "id": 225,
+            f"id": {add_meme},
             "text": "Family",
             "url":
                 "https://www.thevoicemag.ru/upload/img_cache/f0e/f0e1c3b4b532fbc70a73e022ffcf35f2_fitted_1332x0.jpg",
@@ -54,44 +49,25 @@ def test_modification_meme(domain, token):
             }
         }
     )
-    response = requests.request('PUT', f'{domain}/meme/225', headers=headers, data=data).json()
+    response = requests.request('PUT', f'{domain}/meme/{test_add_new_meme}', headers=headers, data=data).json()
     assert response['tags'] == ["fun", "Vin Diesel", "The Fast and the Furious"]
-    assert response['id'] == 225
+    assert response['id'] == add_meme
 
 
-def test_delete_meme(domain, token):
+def test_delete_meme(domain, token, add_meme):
     headers = {
         'Content-Type': 'application/json',
         'Authorization': f'{token}'
     }
-    data = json.dumps(
-        {
-            "text": "Family",
-            "url":
-                "https://www.thevoicemag.ru/upload/img_cache/f0e/f0e1c3b4b532fbc70a73e022ffcf35f2_fitted_1332x0.jpg",
-            "tags": [
-                "fun",
-                "Vin Diesel"
-            ],
-            "info": {
-                "type": "jpg"
-
-            }
-        }
-    )
-    response = requests.request('POST', f'{domain}/meme', headers=headers, data=data).json()
-
-    meme_id = yield response['id']
-
-    requests.request('DELETE', f'{domain}/meme/{meme_id}')
-    response = requests.request('GET', f'{domain}/meme/224', headers=headers)
-    assert response.status_code == 401
+    requests.request('DELETE', f'{domain}/meme/{add_meme}', headers=headers)
+    response = requests.request('GET', f'{domain}/meme/{add_meme}', headers=headers)
+    assert response.status_code == 404
 
 
-def test_teg_fun(domain, token):
+def test_teg_fun(domain, authorize):
     header = {
         'Content-Type': 'application/json',
-        'Authorization': f'{token}'
+        'Authorization': f'{authorize}'
     }
     response = requests.get(f'{domain}/meme', headers=header).json()['data']
     test_result = False
