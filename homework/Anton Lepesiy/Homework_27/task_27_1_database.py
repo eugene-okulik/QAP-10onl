@@ -25,19 +25,19 @@ student_id = cursor.lastrowid
 
 add_a_book = 'INSERT INTO `books` (title, taken_by_student_id) VALUES (%s, %s)'
 books = [
-    ('Lucky Star', student_id),
-    ('Dune', student_id)
-    ]
+        ('Lucky Star', student_id),
+        ('Dune', student_id)
+        ]
 cursor.executemany(add_a_book, books)
 db.commit()
 
 student_info = 'SELECT s.name, s.second_name, b.title as book_title, s.id, g.title as group_name ' \
-           'FROM `students` s ' \
-           'JOIN `books` b ' \
-           'ON s.id = b.taken_by_student_id ' \
-           'JOIN `groups` g ' \
-           'ON g.id = s.group_id ' \
-           f'WHERE s.id  = {student_id}'
+               'FROM `students` s ' \
+               'JOIN `books` b ' \
+               'ON s.id = b.taken_by_student_id ' \
+               'JOIN `groups` g ' \
+               'ON g.id = s.group_id ' \
+               f'WHERE s.id  = {student_id}'
 cursor.execute(student_info)
 result = cursor.fetchall()
 student_name = result[0]['name']
