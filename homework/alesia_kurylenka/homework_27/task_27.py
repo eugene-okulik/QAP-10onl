@@ -31,10 +31,10 @@ cursor.executemany(add_two_books_query, books_values)
 db.commit()
 
 get_student_data_query = f"""
-SELECT s.id, s.name, s.second_name, g.title as group_title, b.title as book_title 
-FROM students s 
-JOIN books b JOIN `groups` g 
-ON s.id = b.taken_by_student_id AND s.group_id = g.id 
+SELECT s.id, s.name, s.second_name, g.title as group_title, b.title as book_title
+FROM students s
+JOIN books b JOIN `groups` g
+ON s.id = b.taken_by_student_id AND s.group_id = g.id
 WHERE s.id = {add_student_query_id}
 """
 cursor.execute(get_student_data_query)
