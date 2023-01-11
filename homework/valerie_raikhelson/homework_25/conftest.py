@@ -15,9 +15,7 @@ def domain():
 def authorize(domain):
     token = open('token.txt').read()
     try:
-        req = request.Request(f'{domain}/authorize/{token}')
-        response = request.urlopen(req).read().decode('utf-8')
-        print(token)
+        request.Request(f'{domain}/authorize/{token}')
         return token
     except error.HTTPError:
         create_token(domain)
