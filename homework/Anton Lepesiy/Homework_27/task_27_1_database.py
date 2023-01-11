@@ -25,9 +25,9 @@ student_id = cursor.lastrowid
 
 add_a_book = 'INSERT INTO `books` (title, taken_by_student_id) VALUES (%s, %s)'
 books = [
-        ('Lucky Star', student_id),
-        ('Dune', student_id)
-        ]
+    ('Lucky Star', student_id),
+    ('Dune', student_id)
+]
 cursor.executemany(add_a_book, books)
 db.commit()
 
