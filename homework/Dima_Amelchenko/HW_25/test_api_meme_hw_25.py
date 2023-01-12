@@ -11,10 +11,13 @@ def test_add_new_meme(domain, authorize):
         {
             "text": "Family",
             "url": "https://www.thevoicemag.ru/upload/img_cache/f0e/f0e1c3b4b532fbc70a73e022ffcf35f2_fitted_1332x0.jpg",
-            "tags": ["fun", "Vin Diesel"],
+            "tags": [
+                "fun",
+                "Vin Diesel"
+            ],
             "info": {
                 "type": "jpg"
-                }
+            }
         }
     )
     response = requests.request('POST', f'{domain}/meme', headers=headers, data=data).json()
@@ -32,11 +35,15 @@ def test_modification_meme(domain, token, add_meme):
             "id": add_meme,
             "text": "Family",
             "url": "https://www.thevoicemag.ru/upload/img_cache/f0e/f0e1c3b4b532fbc70a73e022ffcf35f2_fitted_1332x0.jpg",
-            "tags": ["fun", "Vin Diesel", "The Fast and the Furious"],
+            "tags": [
+                "fun",
+                "Vin Diesel",
+                "The Fast and the Furious"
+            ],
             "info":
                 {
                 "type": "jpg"
-                }
+            }
         }
     )
     response = requests.request('PUT', f'{domain}/meme/{test_add_new_meme}', headers=headers, data=data).json()

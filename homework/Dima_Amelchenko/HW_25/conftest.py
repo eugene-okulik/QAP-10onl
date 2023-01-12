@@ -46,7 +46,10 @@ def add_meme(domain, authorize):
         {
             "text": "Family",
             "url": "https://www.thevoicemag.ru/upload/img_cache/f0e/f0e1c3b4b532fbc70a73e022ffcf35f2_fitted_1332x0.jpg",
-            "tags": ["fun", "Vin Diesel"],
+            "tags": [
+                "fun",
+                "Vin Diesel"
+            ],
             "info": {
                 "type": "jpg"
             }
