@@ -27,12 +27,11 @@ books = [('Python Crash Course', f'{student_id}'), ('Python Pocket Reference', f
 cursor.executemany(add_books_sql, books)
 db.commit()
 
-get_student_data_sql = f"""
-SELECT name, second_name, g.title as group_title, b.title as book_title from `groups` g 
-JOIN students s on g.id = s.group_id
-JOIN books b on b.taken_by_student_id = s.id
-WHERE s.id = {student_id}
-"""
+get_student_data_sql = 'SELECT name, second_name, g.title as group_title, b.title as book_title' \
+                       ' FROM `groups` g' \
+                       ' JOIN students s on g.id = s.group_id' \
+                       ' JOIN books b on b.taken_by_student_id = s.id' \
+                       ' WHERE s.id = f"{student_id}"'
 
 cursor.execute(get_student_data_sql)
 students_info = cursor.fetchall()
