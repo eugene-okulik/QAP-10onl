@@ -112,7 +112,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://gotiny.cc/api/<mywwnx>",
+					"raw": "https://gotiny.cc/api/mywwnx",
 					"protocol": "https",
 					"host": [
 						"gotiny",
@@ -120,7 +120,7 @@
 					],
 					"path": [
 						"api",
-						"<mywwnx>"
+						"mywwnx"
 					]
 				}
 			},
