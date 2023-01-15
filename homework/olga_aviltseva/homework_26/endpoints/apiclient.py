@@ -23,7 +23,7 @@ class ApiClient:
             "url": "https://www.bouncegeek.com/wp-content/uploads/2017/10/Best-meme-generator-min.jpg",
             "tags": ["look"],
             "info": {"type": "png"}
-            }
+        }
         response = send(self._token, 'POST', f'{constants.DOMAIN}/meme', body)
         return {"id": response.data['id'], "text": response.data['text']}
 
@@ -34,7 +34,7 @@ class ApiClient:
             "url": "http://4.bp.blogspot.com/-EBM213mALjM/VSUKoz_t0CI/AAAAAAAAuKs/xf5lgQll82k/s1600/meme%2B(2).jpg",
             "tags": ["everywhere"],
             "info": {"type": "png"}
-            }
+        }
         response = send(self._token, "PUT", f'{constants.DOMAIN}/meme/{meme_id}', body)
         return {"id": response.data['id'], "text": response.data['text']}
 
