@@ -42,7 +42,7 @@ cursor.executemany(add_books, books)
 db.commit()
 
 get_student = f"""
-SELECT name, second_name, g.title as group_title, b.title as book_title from `groups` g 
+SELECT name, second_name, g.title as group_title, b.title as book_title from `groups` g
 JOIN students s on g.id = s.group_id
 JOIN books b on b.taken_by_student_id = s.id
 WHERE s.id = {student_id}
