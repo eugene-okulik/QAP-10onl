@@ -12,10 +12,10 @@ class ApiClient:
     def _authorize():
         headers = {
             'Content-Type': 'application/json'
-        }
+            }
         body = {
             "name": "user"
-        }
+            }
 
         response = send('', 'POST', f'{constants.DOMAIN}/authorize', body, headers)
         token = response.data['token']
