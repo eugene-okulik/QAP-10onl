@@ -19,4 +19,3 @@ class Endpoint:
     @property
     def data(self):
         return self._response.json()
-    
