@@ -10,12 +10,8 @@ class ApiClient:
 
     @staticmethod
     def _authorize():
-        headers = {
-            'Content-Type': 'application/json'
-                  }
-        body = {
-            "name": "user"
-               }
+        headers = {'Content-Type': 'application/json'}
+        body = {"name": "user"}
 
         response = send('', 'POST', f'{constants.DOMAIN}/authorize', body, headers)
         token = response.data['token']
