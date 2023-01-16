@@ -10,31 +10,33 @@ db = mysql.connect(
 
 cursor = db.cursor(dictionary=True)
 
-query_create_group = 'INSERT INTO `groups` VALUES (%s, %s, %s, %s)'
-group_value = (4, 'QAP-10', '2022-01-10', '2023-01-10')
+query_create_group = 'INSERT INTO `groups` (title, start_date, end_date) VALUES (%s, %s, %s)'
+group_value = ('QAP-10', '2022-01-10', '2023-01-10')
 cursor.execute(query_create_group, group_value)
+query_create_group_id = cursor.lastrowid
 
-query_create_student = 'INSERT INTO students VALUES (%s, %s, %s, %s)'
-student_value = (16, 'Konstantin', 'Ibragimov', 4)
+query_create_student = 'INSERT INTO students (name, second_name, group_id) VALUES (%s, %s, %s)'
+student_value = ('Konstantin', 'Ibragimov', query_create_group_id)
 cursor.execute(query_create_student, student_value)
+query_create_student_id = cursor.lastrowid
 
-query_create_book = 'INSERT INTO books  VALUES (%s, %s, %s)'
+query_create_book = 'INSERT INTO books (title, taken_by_student_id)  VALUES (%s, %s)'
 book_value = [
-    (10, 'Learning Python (part 1)', 16),
-    (11, 'Learning Python (part 2)', 16)
+    ('Learning Python (part 1)', query_create_student_id),
+    ('Learning Python (part 2)', query_create_student_id)
 ]
 cursor.executemany(query_create_book, book_value)
 
 db.commit()
 
-query_result = '''
+query_result = f'''
 SELECT s.name as first_name, s.second_name as second_name, g.title as group_title, b.title as book_title
 FROM students s
 JOIN books b
 JOIN `groups` g
 ON s.id = b.taken_by_student_id
 AND s.group_id  = g.id
-WHERE s.group_id = 4
+WHERE s.group_id = {query_create_group_id}
 '''
 cursor.execute(query_result)
 result = cursor.fetchall()
