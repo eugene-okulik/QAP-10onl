@@ -17,4 +17,3 @@ class EcoFriendly(BasePage):
 
     def cart(self):
         return self.find(locator.CART)
-

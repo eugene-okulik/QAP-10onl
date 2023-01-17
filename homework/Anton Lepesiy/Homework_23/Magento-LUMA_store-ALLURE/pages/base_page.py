@@ -24,5 +24,5 @@ class BasePage:
     def find_and_submit(self, locator):
         return self.find(*locator).submit()
 
-    def send_key(self,  keys):
+    def send_key(self, keys):
         return self.send_key(keys)
