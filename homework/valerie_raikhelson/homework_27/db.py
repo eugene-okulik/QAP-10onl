@@ -39,7 +39,7 @@ WHERE s.id  = {student_id} """
 cursor.execute(get_student)
 result = cursor.fetchall()
 print(f'''Student {result[0]['name']} {result[0]['second_name']} \
-studied in the {result[0]['group_title']} group and took possible books from the library: \
+studied in the {result[0]['group_title']} group and took possible books from the library : \
 "{result[0]['book_title']}", "{result[1]['book_title']}".'''
       )
 
