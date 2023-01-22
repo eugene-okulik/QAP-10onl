@@ -32,7 +32,7 @@ db.commit()
 query = f'''SELECT CONCAT('Student ',  s.name,  ' ',  s.second_name,  ' studies in group ',  g.title,  ' 
 and took the following books: ',  GROUP_CONCAT(b.title)) as result_text
 from students s 
-join books b join `groups` g 
+join books b join `groups` g
 on s.id = b.taken_by_student_id and s.group_id = g.id
 group by
 s.id, s.name, s.second_name, g.title, b.taken_by_student_id
