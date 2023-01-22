@@ -24,7 +24,7 @@ query = 'insert into books (title, taken_by_student_id) values (%s, %s)'
 values = [
     ('Misery', student_id),
     ('The Long Walk', student_id)
-    ]
+]
 cursor.executemany(query, values)
 db.commit()
 
