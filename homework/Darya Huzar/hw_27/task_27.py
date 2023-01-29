@@ -22,7 +22,7 @@ db.commit()
 id_st = cursor.lastrowid
 
 book_list = [('Pride and Prejudice', id_st),
-             ('The great Gatsby', id_st)]
+             ('Wuthering Heights', id_st)]
 cursor.executemany('INSERT INTO books (title, taken_by_student_id) VALUES (%s, %s)', book_list)
 db.commit()
 
